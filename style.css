@@ -170,7 +170,7 @@ html{
     overflow: hidden;
     transform: translateY(-50%);    
     color: tomato;
-    filter: blur(0.9px);
+    filter: blur(0.5px);
         -webkit-filter: blur(0.9px);
 
 }
