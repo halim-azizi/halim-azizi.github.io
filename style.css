@@ -1,3 +1,4 @@
+
 /*name fall*/
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
@@ -113,10 +114,11 @@ text-decoration: none;
 	height: 100px;
 	line-height: 100px;
 	text-align: center;
-	color: tomato;
-	margin: 0 16px;
+  color: tomato;
 	transition: 0.8s linear;
 	position: relative;
+  margin-left: auto;
+  margin-right: auto;
   }
   
   .s a::before, .s a::after{
@@ -132,8 +134,8 @@ text-decoration: none;
   
   .s a:hover{
 	transform: scale(.8);
-  	color: tomato;
-  	text-decoration: none;
+  color: tomato;
+  text-decoration: none;
   }
   
   .s a:hover::before{
@@ -171,18 +173,19 @@ html{
     transform: translateY(-50%);    
     color: tomato;
     filter: blur(0.5px);
-        -webkit-filter: blur(0.5px);
+    -webkit-filter: blur(0.5px);
+
 
 }
 
 /* Animation */
 .anim-typewriter{
-  animation: typewriter 4s steps(30) 2s 1 normal both,
-             blinkTextCursor 900ms steps(20) infinite normal;
+  animation: typewriter 4s steps(25) 2s 1 normal both,
+             blinkTextCursor 900ms steps(14) infinite normal;
 }
 @keyframes typewriter{
   from{width: 0;}
-  to{width: 21em;}
+  to{width: 18em;}
 }
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(255,255,255,.75);}
@@ -241,6 +244,7 @@ canvas{
   width: 200%;
   height: 200vh;
 }
+
 
 
 
