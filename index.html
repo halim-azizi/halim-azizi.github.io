@@ -58,10 +58,24 @@
 <!--social media icons-->
 <div class="d-flex justify-content-center">
 	<div class="s">
-		<div class="element">
-			<input type="file" name="image" accept="image/*" capture="camera">
-        		<input type="file" name="image" accept="image/*" capture="environment">
-		</div>
+		<div class="display-cover">
+    <video autoplay></video>
+    <canvas class="d-none"></canvas>
+
+    <div class="video-options">
+        <select name="" id="" class="custom-select">
+            <option value="">Select camera</option>
+        </select>
+    </div>
+
+    <img class="screenshot-image d-none" alt="">
+
+    <div class="controls">
+        <button class="btn btn-danger play" title="Play"><i data-feather="play-circle"></i></button>
+        <button class="btn btn-info pause d-none" title="Pause"><i data-feather="pause"></i></button>
+        <button class="btn btn-outline-success screenshot d-none" title="ScreenShot"><i data-feather="image"></i></button>
+    </div>
+</div>
     		<a href="https://www.facebook.com/halim.azizi.16/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
     		<a href="https://github.com/hhalim0" title="Github"><i class="fab fa-github"></i></a>
     		<a href="https://www.instagram.com/hali5m/" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -72,7 +86,7 @@
 </div>
 
 
-
+<script src="https://unpkg.com/feather-icons"></script>
 <script>
 	let c = init("canvas"),
   w = (canvas.width = window.innerWidth),
