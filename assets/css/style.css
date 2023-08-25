@@ -383,11 +383,11 @@ section .container {
 
 .skill::after {
   content: "";
-  width: 120px;
-  height: 1px;
-  display: inline-block;
-  background: #4ceb95;
-  margin: 4px 10px;
+    width: 20px;
+    height: 1px;
+    display: inline-block;
+    background: #4ceb95;
+    margin: 4px 10px;
 }
 
 .section-title h2::after {
