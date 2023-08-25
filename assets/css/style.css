@@ -370,7 +370,7 @@ section .container {
 }
 
 .section-title h2 {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   padding: 0;
   line-height: 1px;
@@ -379,6 +379,15 @@ section .container {
   text-transform: uppercase;
   color: #aaaaaa;
   font-family: "Poppins", sans-serif;
+}
+
+.skill::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: #4ceb95;
+  margin: 4px 10px;
 }
 
 .section-title h2::after {
