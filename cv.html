@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halim Azizi — Senior Front-End & Full-Stack Software Engineer CV</title>
+  <link href="assets/img/favicon-32x32.png" rel="icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #162a45;
+      --slate: #334155;
+      --text: #1e293b;
+      --muted: #64748b;
+      --rule: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: #f1f5f9;
+      line-height: 1.31;
+      font-size: 8.15pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 68px 16px 40px;
+    }
+
+    /* Non-printing Top Action Bar */
+    .cv-toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 52px;
+      background: #0f172a;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      font-size: 13px;
+    }
+
+    .cv-toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cv-toolbar-brand {
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: all 0.2s ease;
+    }
+
+    .cv-toolbar-brand:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .cv-toolbar-title {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .cv-toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+
+    .page-container {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 9mm 11mm;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.12);
+      border-radius: 4px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 6px;
+    }
+
+    h1.name {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 18.5pt;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: 0.4px;
+      margin-bottom: 1px;
+    }
+
+    .tagline {
+      font-size: 7.9pt;
+      font-weight: 700;
+      color: var(--slate);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .contact-bar {
+      font-size: 7.85pt;
+      color: var(--slate);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 8px;
+      align-items: center;
+    }
+
+    .contact-bar a {
+      color: var(--slate);
+      text-decoration: none;
+    }
+
+    .contact-bar a:hover {
+      color: var(--navy);
+      text-decoration: underline;
+    }
+
+    .contact-bar span.sep {
+      color: #94a3b8;
+    }
+
+    /* Section Headings */
+    section {
+      margin-top: 7px;
+    }
+
+    h2.section-title {
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1.5px;
+      margin-bottom: 4.5px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    /* Profile paragraph */
+    .profile-text {
+      font-size: 8.15pt;
+      color: var(--text);
+      text-align: justify;
+      line-height: 1.35;
+    }
+
+    /* Skills Grid */
+    .skills-table {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 2.5px;
+      column-gap: 10px;
+      font-size: 7.95pt;
+    }
+
+    .skill-cat {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .skill-items {
+      color: var(--text);
+    }
+
+    /* Experience & Project Items */
+    .exp-item {
+      margin-bottom: 5.5px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 1.5px;
+    }
+
+    .exp-title-line {
+      font-size: 8.6pt;
+      color: var(--text);
+    }
+
+    .exp-role {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .exp-company {
+      font-weight: 500;
+      color: var(--slate);
+    }
+
+    .exp-meta {
+      font-size: 7.7pt;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tech-stack-line {
+      font-size: 7.55pt;
+      color: var(--navy);
+      background: #f1f5f9;
+      padding: 1.5px 5px;
+      border-radius: 3px;
+      display: block;
+      margin-bottom: 2.5px;
+      font-weight: 500;
+      line-height: 1.26;
+    }
+
+    .tech-stack-line strong {
+      font-weight: 700;
+    }
+
+    ul.bullets {
+      list-style-type: disc;
+      margin-left: 14px;
+      font-size: 7.95pt;
+      color: var(--text);
+    }
+
+    ul.bullets li {
+      margin-bottom: 1.5px;
+      line-height: 1.29;
+    }
+
+    ul.bullets li strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .edu-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 8.15pt;
+      margin-bottom: 1.5px;
+    }
+
+    .lang-line {
+      font-size: 8.15pt;
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      .cv-toolbar-title {
+        display: none;
+      }
+      .skills-table {
+        grid-template-columns: 1fr;
+      }
+      .exp-header, .edu-line {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 7.5mm 11mm;
+      }
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .cv-toolbar {
+        display: none !important;
+      }
+      .page-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Non-Printing Toolbar -->
+  <div class="cv-toolbar">
+    <div class="cv-toolbar-left">
+      <a href="index.html" class="cv-toolbar-brand">&larr; Back to Portfolio</a>
+      <span class="cv-toolbar-title">Halim Azizi — Curriculum Vitae (A4 Print-Ready)</span>
+    </div>
+    <div class="cv-toolbar-actions">
+      <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <!-- HEADER -->
+    <header>
+      <h1 class="name">HALIM AZIZI</h1>
+      <div class="tagline">
+        Senior Front-End &amp; Full-Stack Engineer &nbsp;|&nbsp; Angular &bull; TypeScript &bull; React/Next.js &bull; .NET &amp; AI Systems
+      </div>
+      <div class="contact-bar">
+        <span>Tetovo, North Macedonia</span>
+        <span class="sep">|</span>
+        <a href="mailto:halimazizi111@hotmail.com">halimazizi111@hotmail.com</a>
+        <span class="sep">|</span>
+        <a href="https://linkedin.com/in/halim-azizi-262680206" target="_blank" rel="noopener">linkedin.com/in/halim-azizi-262680206</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/halim-azizi" target="_blank" rel="noopener">github.com/halim-azizi</a>
+        <span class="sep">|</span>
+        <a href="https://halim-azizi.github.io">halim-azizi.github.io</a>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL PROFILE -->
+    <section>
+      <h2 class="section-title">Professional Profile</h2>
+      <p class="profile-text">
+        Results-driven Front-End &amp; Full-Stack Software Engineer with <strong>4+ years of commercial experience</strong> architecting, scaling, and maintaining business-critical enterprise web applications. Deep expertise in <strong>Angular (v12–v21)</strong>, <strong>TypeScript</strong>, <strong>RxJS</strong>, <strong>Signals</strong>, and complex JSON-driven form engines (<strong>SurveyJS</strong>), alongside modern full-stack product delivery using <strong>React 18/19</strong>, <strong>Next.js</strong>, <strong>NestJS</strong>, <strong>.NET / ASP.NET Core</strong>, and <strong>Supabase/PostgreSQL</strong>. Proven 3+ year track record as a core engineer on the enterprise <em>Alive Health / CST Survey Platform</em>, delivering dynamic clinical questionnaires, biometric data visualizations, multilingual localization pipelines, and AI-assisted workflows. Highly adept at owning features end-to-end—from system architecture and REST/SignalR API integration to Playwright browser automation and Linux VPS production deployments.
+      </p>
+    </section>
+
+    <!-- TECHNICAL EXPERTISE -->
+    <section>
+      <h2 class="section-title">Technical Expertise</h2>
+      <div class="skills-table">
+        <div class="skill-cat">Front-End Core</div>
+        <div class="skill-items">Angular (v12–v21, Standalone Components, Signals), TypeScript, JavaScript (ES6+), RxJS, React (v18/v19), Next.js (App Router), HTML5, CSS3, SCSS/Sass, Tailwind CSS (v3/v4), Ionic</div>
+
+        <div class="skill-cat">Enterprise UI &amp; Forms</div>
+        <div class="skill-items">SurveyJS (<code>survey-core</code>, <code>survey-angular-ui</code>, <code>survey-creator</code>), JSON-Driven Dynamic Forms, Conditional Branching, Nebular / ngx-admin, CoreUI, Angular CDK, shadcn/ui, Radix UI, Framer Motion, CKEditor 5, TinyMCE, Bootstrap</div>
+
+        <div class="skill-cat">Data Viz, Maps &amp; Docs</div>
+        <div class="skill-items">Apache ECharts, Swimlane ngx-charts, Chart.js, Recharts, Leaflet &amp; React-Leaflet (Geolocation/GIS), jsPDF &amp; AutoTable, html2canvas, JSZip, SheetJS (xlsx), angularx-qrcode, @dnd-kit</div>
+
+        <div class="skill-cat">Back-End &amp; Databases</div>
+        <div class="skill-items">.NET / ASP.NET Core Web API (C#), NestJS, Node.js, SignalR (Real-Time WebSockets), Prisma ORM, PostgreSQL, Supabase (Auth, PostgreSQL, RLS, Edge Functions, Storage), Redis &amp; BullMQ, SQL</div>
+
+        <div class="skill-cat">AI, Auth &amp; Integrations</div>
+        <div class="skill-items">Google Gemini API, OpenAI API, Agentic AI Copilots, Prompt Caching &amp; Sanitization, Azure AD MSAL (<code>@azure/msal-angular</code>), OAuth2/JWT, Polar.sh Billing, ngx-translate, i18next, Google/Bing Translate APIs</div>
+
+        <div class="skill-cat">Testing, DevOps &amp; Infra</div>
+        <div class="skill-items">Playwright (Browser Automation &amp; E2E), Vitest, Jasmine/Karma, Docker &amp; Docker Compose, Nginx, Hetzner Linux VPS, Cloudflare Pages/Workers &amp; R2, Netlify, Git, GitHub/GitLab CI/CD, Compodoc</div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section>
+      <h2 class="section-title">Professional Experience</h2>
+
+      <!-- ONINE / dev909 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">Front-End Software Engineer</span> &nbsp;|&nbsp;
+            <span class="exp-company">ONINE / dev909 &bull; Skopje, North Macedonia</span>
+          </div>
+          <div class="exp-meta">December 2022 – Present (3+ Years)</div>
+        </div>
+        <div class="tech-stack-line">
+          <strong>Core Stack:</strong> Angular (up to v21), TypeScript, RxJS, SurveyJS, Nebular/ngx-admin, CoreUI, Azure MSAL, ECharts, ngx-charts, CKEditor 5, jsPDF, ngx-translate, .NET / ASP.NET Core REST APIs, Ionic
+        </div>
+        <ul class="bullets">
+          <li><strong>Lead Front-End Engineering on Alive Health / CST Survey Platform (3+ Years):</strong> Architected, maintained, and continuously evolved a large-scale enterprise health assessment and operational survey platform built on Angular, Nebular, and .NET REST services.</li>
+          <li><strong>Complex SurveyJS &amp; JSON Form Engine:</strong> Engineered sophisticated, schema-driven questionnaires using <code>survey-angular-ui</code> and <code>survey-creator-angular</code> with multi-stage conditional branching, custom validation rules, calculated biometric expressions, and role/task-specific rendering.</li>
+          <li><strong>Health &amp; Biometric Analytics Dashboards:</strong> Built interactive visual analytics modules using <strong>Apache ECharts</strong>, <strong>Swimlane ngx-charts</strong>, and <strong>Chart.js</strong>, including contrast analysis dashboards, dynamic health plots, body measurement tracking, and integrated audio/podcast media players.</li>
+          <li><strong>AI Text Generation &amp; Multilingual Localization:</strong> Implemented AI-assisted dynamic health tip generation with prompt caching and filter pipelines, paired with automated multi-language translation workflows using <code>@ngx-translate/core</code>, Google Translate API, and Bing Translate API.</li>
+          <li><strong>Enterprise Security, Reporting &amp; Rich Media:</strong> Integrated <strong>Azure Active Directory (MSAL)</strong> authentication and Nebular role-based access control (RBAC); engineered client-side PDF/ZIP report exports (<code>jsPDF</code>, <code>html2canvas</code>, <code>JSZip</code>), QR code workflows (<code>angularx-qrcode</code>), and rich text authoring via <strong>CKEditor 5</strong> and <strong>TinyMCE</strong>.</li>
+          <li><strong>Workforce, Warehouse &amp; POS Systems:</strong> Delivered cross-platform enterprise modules using <strong>Angular</strong> and <strong>Ionic</strong> covering employee time tracking, warehouse inventory workflows, automated PDF invoice generation, and Point-of-Sale (POS) terminals connected to .NET APIs.</li>
+          <li><strong>Framework Modernization &amp; Production Delivery:</strong> Led framework migrations up to Angular 21, optimized high-memory build pipelines (AOT production builds deployed to Linux Nginx servers), and collaborated closely with .NET backend engineers to debug complex payload mappings and state regressions.</li>
+        </ul>
+      </div>
+
+      <!-- Independent / Full-Stack & AI Product Engineering -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">Full-Stack &amp; Front-End Engineer (Independent &amp; Client Products)</span> &nbsp;|&nbsp;
+            <span class="exp-company">Remote / Contract</span>
+          </div>
+          <div class="exp-meta">March 2023 – Present</div>
+        </div>
+        <div class="tech-stack-line">
+          <strong>Core Stack:</strong> Angular 19, React 18/19, Next.js 16, NestJS, .NET Core, TypeScript, Supabase, PostgreSQL, Prisma, Playwright, SignalR, Tailwind CSS, Docker, Hetzner VPS, Cloudflare
+        </div>
+        <ul class="bullets">
+          <li>Architect and deliver production-ready SaaS applications, enterprise web platforms, and AI-powered automation tools from initial system design to cloud deployment.</li>
+          <li>Design responsive, accessible component libraries and real-time dashboards using Angular Standalone Components, Signals, React, Next.js, and Tailwind CSS, backed by NestJS, .NET Core, and Supabase/PostgreSQL.</li>
+          <li>Build end-to-end browser automation workers with Playwright, integrate LLM workflows (Google Gemini, OpenAI), and manage containerized production deployments on Hetzner VPS with Docker, Nginx, and Cloudflare.</li>
+        </ul>
+      </div>
+
+      <!-- Capstone MK -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">Junior Front-End Developer</span> &nbsp;|&nbsp;
+            <span class="exp-company">Capstone MK &bull; Tetovo, North Macedonia</span>
+          </div>
+          <div class="exp-meta">March 2022 – October 2022</div>
+        </div>
+        <ul class="bullets">
+          <li>Developed and maintained modular Angular and TypeScript UI components, responsive page layouts, and SCSS styling improvements across client web applications; collaborated in Agile sprints and cross-browser UI debugging.</li>
+        </ul>
+      </div>
+
+      <!-- ISolve -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">Front-End Development Intern</span> &nbsp;|&nbsp;
+            <span class="exp-company">ISolve &bull; Tetovo, North Macedonia</span>
+          </div>
+          <div class="exp-meta">August 2020 – October 2020</div>
+        </div>
+        <ul class="bullets">
+          <li>Assisted senior engineers with HTML5, CSS3, JavaScript, and Angular UI implementation, component bug fixes, and responsive layout testing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DETAILED PRODUCT & PROJECT ARCHITECTURE PORTFOLIO -->
+    <section>
+      <h2 class="section-title">Key Product &amp; Systems Architecture Portfolio</h2>
+
+      <!-- Project 1: Alive Health -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">1. Alive Health &amp; CST Enterprise Survey Platform</span> &nbsp;|&nbsp;
+            <span class="exp-company">Enterprise Healthcare &amp; Assessment SaaS (3+ Years)</span>
+          </div>
+          <div class="exp-meta">ONINE / dev909</div>
+        </div>
+        <div class="tech-stack-line">
+          <strong>Tech Used:</strong> Angular 21, TypeScript, RxJS, SurveyJS (Core, Angular UI, Creator), Nebular 17, CoreUI 5, Azure MSAL, ECharts, Swimlane ngx-charts, CKEditor 5, TinyMCE, jsPDF, html2canvas, JSZip, angularx-qrcode, ngx-translate, .NET Core APIs
+        </div>
+        <ul class="bullets">
+          <li><strong>Dynamic Assessment Engine:</strong> Built a comprehensive clinical survey creator and runner supporting complex JSON schemas, dynamic branching, multi-role review states, and real-time score evaluation.</li>
+          <li><strong>Visual Health Telemetry &amp; Localization:</strong> Engineered interactive biometric plots, contrast analysis views, and multi-language translation pipelines with automated caching and PDF health report compilation.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2: BAU Leader / SiteWise Pro -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">2. BAU Leader (SiteWise Pro)</span> &nbsp;|&nbsp;
+            <span class="exp-company">Construction Site &amp; Defect Management SaaS Platform</span>
+          </div>
+          <div class="exp-meta">Full-Stack SaaS</div>
+        </div>
+        <div class="tech-stack-line">
+          <strong>Tech Used:</strong> React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui (Radix UI), Supabase (PostgreSQL, Auth, RLS, Storage, Edge Functions), TanStack React Query, React Hook Form, Zod, @dnd-kit, Leaflet/React-Leaflet, Recharts, jsPDF-AutoTable, SheetJS (xlsx), i18next (EN/DE), Polar.sh Billing, Cloudflare, Vitest
+        </div>
+        <ul class="bullets">
+          <li><strong>23-Page Construction SaaS Architecture:</strong> Engineered a full-featured construction management platform with 30+ custom hooks, bilingual German/English (<code>i18next</code>) support, role-based project workspaces, and Web Push notifications.</li>
+          <li><strong>Defect Folder Hierarchy &amp; Multi-Image Evidence:</strong> Built a structured defect reporting engine enabling engineers to organize defects into custom building/unit folders (e.g., House A, House B), attach multi-image photo evidence via Supabase Storage, and export structured PDF/Excel site reports.</li>
+          <li><strong>Geolocation GIS, Whiteboards &amp; Billing:</strong> Integrated interactive <strong>Leaflet</strong> site geolocation maps, drag-and-drop kanban boards (<code>@dnd-kit</code>), collaborative project whiteboards, document management tabs, and automated subscription billing via <strong>Polar.sh</strong> Deno Edge Functions.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3: AI AutoApply & Job Tinder -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">3. AI AutoApply &amp; Job Tinder</span> &nbsp;|&nbsp;
+            <span class="exp-company">Autonomous AI Job Discovery &amp; Browser Automation Platform</span>
+          </div>
+          <div class="exp-meta">Full-Stack Monorepo</div>
+        </div>
+        <div class="tech-stack-line">
+          <strong>Tech Used:</strong> Angular 19 (Standalone, Signals), Tailwind CSS, NestJS, Swagger/OpenAPI, Prisma ORM, PostgreSQL, Supabase, Redis, BullMQ, Playwright (Chromium), Google Gemini API, OpenAI API, Docker Compose, Nginx
+        </div>
+        <ul class="bullets">
+          <li><strong>14-Page Angular 19 SaaS Dashboard &amp; NestJS API:</strong> Built a full-stack TypeScript monorepo featuring a reactive Angular Signals dashboard, Small Company Explorer, Analytics funnel, and a modular NestJS REST API with Prisma ORM.</li>
+          <li><strong>AI Matching &amp; Document Tailoring Engine:</strong> Implemented provider-agnostic LLM integration (Gemini &amp; OpenAI) with 7-factor explainable match scoring, hard work-authorization eligibility gates, prompt-injection sanitization, and automated ATS single-column resume &amp; cover letter synthesis.</li>
+          <li><strong>Playwright ATS Automation Worker:</strong> Engineered headless Chromium adapters for <strong>Greenhouse</strong>, <strong>Lever</strong>, <strong>Ashby</strong>, and generic HTML forms with automated screening question resolution, CAPTCHA/login-wall safety halts, and screenshot confirmation verification.</li>
+        </ul>
+      </div>
+
+      <!-- Project 4: InfraMind AI -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">4. InfraMind AI</span> &nbsp;|&nbsp;
+            <span class="exp-company">AI-Powered Data Center &amp; Infrastructure Operations Platform</span>
+          </div>
+          <div class="exp-meta">Enterprise AI &amp; Telemetry</div>
+        </div>
+        <div class="tech-stack-line">
+          <strong>Tech Used:</strong> Angular, TypeScript, Apache ECharts, .NET Core Web API (C#), SignalR (WebSockets), PostgreSQL, Agentic AI Copilot, Docker &amp; Docker Compose
+        </div>
+        <ul class="bullets">
+          <li><strong>Real-Time Data Center Telemetry:</strong> Developed an enterprise operations platform combining an Angular UI with a .NET Web API and <strong>SignalR</strong> to stream live rack, server, CPU, RAM, GPU, and thermal cooling metrics into interactive <strong>ECharts</strong> visualizations.</li>
+          <li><strong>Automated Incident Desk &amp; AI Operations Copilot:</strong> Built a background infrastructure anomaly simulator that triggers service-desk incidents, paired with an LLM Copilot that inspects server telemetry and performs automated root-cause analysis (RCA).</li>
+        </ul>
+      </div>
+
+      <!-- Project 5: Wedora, SaaS POS, BuzzQo & Atelier AA -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title-line">
+            <span class="exp-role">5. Wedora Marketplace, SaaS POS, BuzzQo Automator &amp; Atelier AA</span> &nbsp;|&nbsp;
+            <span class="exp-company">Commercial Web &amp; Automation Projects</span>
+          </div>
+          <div class="exp-meta">Multi-Stack Delivery</div>
+        </div>
+        <div class="tech-stack-line">
+          <strong>Tech Used:</strong> Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion, Python, HTML5/SCSS, Hetzner VPS, Nginx, Cloudflare R2
+        </div>
+        <ul class="bullets">
+          <li><strong>Wedora Wedding Marketplace:</strong> Built a modern vendor discovery and booking platform using <strong>Next.js 16</strong>, <strong>React 19</strong>, <strong>Tailwind CSS v4</strong>, and <strong>Framer Motion</strong> with rich animations and category filtering.</li>
+          <li><strong>SaaS POS, BuzzQo Flow Automator &amp; Atelier AA:</strong> Designed high-converting SaaS Point-of-Sale interfaces, engineered a Python-backed media variant &amp; export automation server (<em>BuzzQo</em>), and delivered pixel-perfect architectural showcase portals (<em>stage.atelier-aa.ch</em>).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION & LANGUAGES -->
+    <section>
+      <h2 class="section-title">Education &amp; Languages</h2>
+      <div class="edu-line">
+        <div>
+          <strong>BSc in Computer Science (Applied Informatics)</strong> &nbsp;|&nbsp;
+          University of Tetova, Faculty of Natural Sciences and Mathematics
+        </div>
+        <div class="exp-meta">2018 – 2022</div>
+      </div>
+      <div class="lang-line" style="margin-top: 4px;">
+        <strong>Languages:</strong> &nbsp;
+        <strong>Albanian</strong> (Native) &nbsp;&bull;&nbsp;
+        <strong>English</strong> (Full Professional Working Proficiency) &nbsp;&bull;&nbsp;
+        <strong>Macedonian</strong> (Professional Working Proficiency)
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Halim Azizi | Software Developer</title>
-  <meta content="Portfolio of Halim Azizi, Software Developer" name="description">
+  <title>Halim Azizi — Senior Front-End & Full-Stack Software Engineer | Angular • TypeScript • React/Next.js • .NET & AI</title>
+  <meta name="description" content="Portfolio & Systems Architecture of Halim Azizi, Senior Front-End & Full-Stack Software Engineer with 4+ years of commercial experience in Angular (v12–v21), TypeScript, SurveyJS, React 18/19, Next.js, NestJS, .NET Core, Supabase, and AI Systems.">
+  <meta name="keywords" content="Halim Azizi, Senior Front-End Engineer, Full-Stack Software Engineer, Angular, TypeScript, SurveyJS, React, Next.js, NestJS, .NET Core, Supabase, Playwright, AI Systems, North Macedonia">
+  <meta name="author" content="Halim Azizi">
 
-  <!-- Fonts -->
+  <!-- Favicon -->
+  <link href="assets/img/favicon-32x32.png" rel="icon">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -28,538 +31,1424 @@
 
 <body>
 
-  <!-- Custom Cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-
-  <!-- Ambient Background Orbs -->
-  <div class="ambient-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-    <div class="orb orb-5"></div>
-    <div class="orb orb-6"></div>
+  <!-- Background Architectural Grid & Subtle Glows -->
+  <div class="arch-bg" aria-hidden="true">
+    <div class="arch-grid"></div>
+    <div class="arch-glow glow-primary"></div>
+    <div class="arch-glow glow-secondary"></div>
   </div>
 
-  <!-- Navbar -->
-  <nav class="custom-navbar is-visible">
+  <!-- Top Navigation Bar -->
+  <header class="site-header" id="siteHeader">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="#" class="brand-logo">H<span>A</span>.</a>
-      <ul class="nav-links d-none d-md-flex">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="hamburger d-md-none">
-        <i class="bi bi-list"></i>
+      <a href="#hero" class="brand-identity">
+        <span class="brand-monogram">HA</span>
+        <div class="brand-text">
+          <span class="brand-name">Halim Azizi</span>
+          <span class="brand-role">Senior FE &amp; Full-Stack Engineer</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav d-none d-xl-flex align-items-center" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="active">Overview</a></li>
+          <li><a href="#about">Profile</a></li>
+          <li><a href="#expertise">Tech Stack</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#portfolio">Systems Portfolio</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions d-flex align-items-center gap-2">
+        <button type="button" class="theme-toggle-btn" id="themeToggle" aria-label="Toggle color theme" title="Toggle Dark/Light Mode">
+          <i class="bi bi-sun-fill icon-light"></i>
+          <i class="bi bi-moon-stars-fill icon-dark"></i>
+        </button>
+        <a href="cv.html" class="btn-header-cv d-none d-sm-inline-flex">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>Printable CV</span>
+        </a>
+        <button type="button" class="mobile-menu-trigger d-xl-none" id="mobileMenuOpen" aria-label="Open Navigation Menu">
+          <i class="bi bi-list"></i>
+        </button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu">
-    <div class="close-menu"><i class="bi bi-x"></i></div>
-    <ul class="mobile-nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <a href="#hero" class="brand-identity">
+        <span class="brand-monogram">HA</span>
+        <div class="brand-text">
+          <span class="brand-name">Halim Azizi</span>
+          <span class="brand-role">Senior Software Engineer</span>
+        </div>
+      </a>
+      <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Navigation Menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#hero">Overview</a></li>
+      <li><a href="#about">Professional Profile</a></li>
+      <li><a href="#expertise">Technical Expertise</a></li>
+      <li><a href="#experience">Professional Experience</a></li>
+      <li><a href="#portfolio">Key Systems Portfolio</a></li>
+      <li><a href="#capabilities">Engineering Capabilities</a></li>
+      <li><a href="#contact">Contact &amp; Connect</a></li>
     </ul>
+    <div class="mobile-drawer-footer">
+      <a href="cv.html" class="btn-exec btn-exec-primary w-100 justify-content-center mb-3">
+        <i class="bi bi-file-earmark-pdf"></i> View / Print Full CV
+      </a>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://github.com/halim-azizi" target="_blank" rel="noopener" class="social-pill" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/halim-azizi-262680206" target="_blank" rel="noopener" class="social-pill" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:halimazizi111@hotmail.com" class="social-pill" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+    </div>
   </div>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero d-flex align-items-center">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 fade-in-up">
-          <span class="greeting">Hello, world! I am</span>
-          <h1 class="hero-title">Halim Azizi</h1>
-          <h2 class="hero-subtitle">
-            Crafting digital experiences as a <br>
-            <span class="gradient-text type-effect">Software Developer</span>
-          </h2>
-          <p class="hero-desc">I specialize in building exceptional, scalable software solutions using modern web
-            technologies
-            like Angular and TypeScript.</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn-custom btn-primary-gl">Let's Talk</a>
-            <a href="#about" class="btn-custom btn-outline-gl">Explore More <i class="bi bi-arrow-right"></i></a>
-          </div>
-          <div class="social-links mt-5">
-            <a href="https://github.com/halim-azizi" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/halim-azizi-262680206/" target="_blank"><i
-                class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-5 text-center fade-in-up delay-1">
-          <div class="hero-image-wrapper">
-            <div class="hero-image-backdrop"></div>
-            <img src="assets/img/ss.gif" alt="Halim Azizi" class="hero-img">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-down">
-      <a href="#about">
-        <i class="bi bi-mouse"></i>
-        <span>Scroll Down</span>
-      </a>
-    </div>
-  </section>
+  <main>
+    <!-- ===================================================================
+         HERO SECTION
+         =================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <!-- Left Column -->
+          <div class="col-lg-7 fade-in-up">
+            <div class="hero-badges-row">
+              <span class="status-pill">
+                <span class="status-dot"></span>
+                Available for Senior Engineering Roles &amp; Architecture
+              </span>
+              <span class="meta-pill">
+                <i class="bi bi-geo-alt-fill"></i> Tetovo, North Macedonia
+              </span>
+            </div>
 
-  <!-- About Section -->
-  <section id="about" class="about section-padding">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>About Me</h2>
-        <div class="line"></div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-lg-5 fade-in-up">
-          <div class="about-info-card glass-card card-rotate">
-            <h3>Personal Info</h3>
-            <ul class="info-list">
-              <li><strong>Age:</strong> <span>26</span></li>
-              <li><strong>Residence:</strong> <span>Tetovo, North Macedonia</span></li>
-              <li><strong>Degree:</strong> <span>Bachelor of Computer Science</span></li>
-              <li><strong>Email:</strong> <span>halimazizi111@hotmail.com</span></li>
-              <li><strong>Phone:</strong> <span>+389 72 652 113</span></li>
-            </ul>
-            <p class="mt-4">
-              With 3 years of professional experience as a Software Developer, I specialize in building scalable
-              applications using Angular and TypeScript. I embrace feedback, seek opportunities to improve, and
-              prioritize collaboration. Committed to writing clean code, I stay current with the latest technologies and
-              industry best practices.
+            <h1 class="hero-name">HALIM AZIZI</h1>
+            <h2 class="hero-role">
+              Senior Front-End &amp; Full-Stack Engineer
+            </h2>
+            <div class="hero-stack-ribbon">
+              <span>Angular (v12–v21)</span>
+              <span class="dot">&bull;</span>
+              <span>TypeScript</span>
+              <span class="dot">&bull;</span>
+              <span>SurveyJS</span>
+              <span class="dot">&bull;</span>
+              <span>React / Next.js</span>
+              <span class="dot">&bull;</span>
+              <span>.NET &amp; AI Systems</span>
+            </div>
+
+            <p class="hero-lead">
+              Results-driven Front-End &amp; Full-Stack Software Engineer with <strong>4+ years of commercial experience</strong> architecting, scaling, and maintaining business-critical enterprise web applications. Proven <strong>3+ year track record</strong> as a core engineer on the enterprise <em>Alive Health / CST Survey Platform</em>, alongside modern full-stack product delivery using <strong>Angular</strong>, <strong>React 18/19</strong>, <strong>Next.js</strong>, <strong>NestJS</strong>, <strong>.NET / ASP.NET Core</strong>, <strong>Supabase/PostgreSQL</strong>, and <strong>Playwright AI automation</strong>.
             </p>
+
+            <div class="hero-cta-group">
+              <a href="#portfolio" class="btn-exec btn-exec-primary">
+                <span>Explore Architecture Portfolio</span>
+                <i class="bi bi-arrow-down-right"></i>
+              </a>
+              <a href="cv.html" class="btn-exec btn-exec-secondary">
+                <i class="bi bi-printer"></i>
+                <span>View / Print A4 CV</span>
+              </a>
+              <a href="#contact" class="btn-exec btn-exec-ghost">
+                <span>Contact Me</span>
+              </a>
+            </div>
+
+            <div class="hero-contact-strip">
+              <a href="mailto:halimazizi111@hotmail.com" class="contact-chip">
+                <i class="bi bi-envelope"></i> halimazizi111@hotmail.com
+              </a>
+              <a href="https://linkedin.com/in/halim-azizi-262680206" target="_blank" rel="noopener" class="contact-chip">
+                <i class="bi bi-linkedin"></i> linkedin.com/in/halim-azizi
+              </a>
+              <a href="https://github.com/halim-azizi" target="_blank" rel="noopener" class="contact-chip">
+                <i class="bi bi-github"></i> github.com/halim-azizi
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Architecture & Telemetry Console -->
+          <div class="col-lg-5 fade-in-up delay-1">
+            <div class="arch-console-card">
+              <div class="console-window-bar">
+                <div class="window-dots">
+                  <span class="w-dot red"></span>
+                  <span class="w-dot amber"></span>
+                  <span class="w-dot green"></span>
+                </div>
+                <div class="console-tabs" role="tablist">
+                  <button type="button" class="console-tab active" data-tab="tab-profile" role="tab" aria-selected="true">
+                    <i class="bi bi-file-earmark-code"></i> profile.ts
+                  </button>
+                  <button type="button" class="console-tab" data-tab="tab-systems" role="tab" aria-selected="false">
+                    <i class="bi bi-diagram-3"></i> systems.json
+                  </button>
+                  <button type="button" class="console-tab" data-tab="tab-devops" role="tab" aria-selected="false">
+                    <i class="bi bi-hdd-network"></i> infra.yml
+                  </button>
+                </div>
+              </div>
+
+              <div class="console-body">
+                <!-- Tab 1: profile.ts -->
+                <div class="console-pane active" id="tab-profile">
+<pre><code><span class="c-kw">export interface</span> <span class="c-type">EngineerProfile</span> {
+  <span class="c-prop">name</span>: <span class="c-str">'Halim Azizi'</span>;
+  <span class="c-prop">role</span>: <span class="c-str">'Senior Front-End &amp; Full-Stack Engineer'</span>;
+  <span class="c-prop">experience</span>: <span class="c-str">'4+ Years Commercial'</span>;
+  <span class="c-prop">coreStack</span>: [
+    <span class="c-str">'Angular v12–v21 (Signals, Standalone)'</span>,
+    <span class="c-str">'TypeScript / RxJS / SurveyJS Engine'</span>,
+    <span class="c-str">'React 18/19 &amp; Next.js 16 (App Router)'</span>,
+    <span class="c-str">'.NET Core Web API / NestJS / SignalR'</span>,
+    <span class="c-str">'Supabase / PostgreSQL / Prisma / Redis'</span>
+  ];
+  <span class="c-prop">aiAndAutomation</span>: [
+    <span class="c-str">'Google Gemini &amp; OpenAI Copilots'</span>,
+    <span class="c-str">'Playwright Headless Browser Workers'</span>
+  ];
+}</code></pre>
+                </div>
+
+                <!-- Tab 2: systems.json -->
+                <div class="console-pane" id="tab-systems">
+<pre><code>{
+  <span class="c-prop">"flagshipSystems"</span>: [
+    {
+      <span class="c-prop">"id"</span>: <span class="c-str">"alive-health-cst"</span>,
+      <span class="c-prop">"domain"</span>: <span class="c-str">"Enterprise Healthcare &amp; Survey SaaS"</span>,
+      <span class="c-prop">"tenure"</span>: <span class="c-str">"3+ Years (ONINE / dev909)"</span>,
+      <span class="c-prop">"engine"</span>: <span class="c-str">"Angular 21 + SurveyJS + .NET APIs"</span>
+    },
+    {
+      <span class="c-prop">"id"</span>: <span class="c-str">"bau-leader-sitewise"</span>,
+      <span class="c-prop">"domain"</span>: <span class="c-str">"23-Page Construction &amp; Defect SaaS"</span>,
+      <span class="c-prop">"engine"</span>: <span class="c-str">"React 18 + Supabase + Leaflet GIS"</span>
+    },
+    {
+      <span class="c-prop">"id"</span>: <span class="c-str">"ai-autoapply-inframind"</span>,
+      <span class="c-prop">"domain"</span>: <span class="c-str">"Autonomous AI &amp; Data Center Telemetry"</span>,
+      <span class="c-prop">"engine"</span>: <span class="c-str">"Angular 19 + NestJS/.NET + Playwright"</span>
+    }
+  ]
+}</code></pre>
+                </div>
+
+                <!-- Tab 3: infra.yml -->
+                <div class="console-pane" id="tab-devops">
+<pre><code><span class="c-prop">architecture_ownership</span>: <span class="c-str">end-to-end</span>
+<span class="c-prop">authentication</span>:
+  - <span class="c-str">Azure AD MSAL (@azure/msal-angular)</span>
+  - <span class="c-str">Supabase Auth + Row-Level Security (RLS)</span>
+  - <span class="c-str">OAuth2 / JWT &amp; Nebular RBAC</span>
+<span class="c-prop">quality_and_testing</span>:
+  - <span class="c-str">Playwright E2E &amp; Chromium Automation</span>
+  - <span class="c-str">Vitest / Jasmine / Karma</span>
+<span class="c-prop">production_deployment</span>:
+  - <span class="c-str">Hetzner Linux VPS + Docker Compose + Nginx</span>
+  - <span class="c-str">Cloudflare Pages, Workers &amp; R2 Storage</span></code></pre>
+                </div>
+              </div>
+
+              <!-- Metrics Grid inside Console Card -->
+              <div class="hero-metrics-grid">
+                <div class="metric-box">
+                  <span class="metric-val">4+ Yrs</span>
+                  <span class="metric-lbl">Commercial Experience</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">3+ Yrs</span>
+                  <span class="metric-lbl">Alive Health / CST Lead FE</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">v12–v21</span>
+                  <span class="metric-lbl">Angular &amp; Signals Mastery</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">5+ Core</span>
+                  <span class="metric-lbl">Enterprise &amp; SaaS Platforms</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-lg-7 mt-4 mt-lg-0 fade-in-up delay-1">
-          <div class="skills-wrapper glass-card card-rotate">
-            <h3 class="mb-4">My Superpowers</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <!-- Skill Item -->
-                <div class="skill-item">
-                  <div class="skill-info"><span>Angular</span><span>95%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 95%;"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PROFESSIONAL PROFILE & ABOUT SECTION
+         =================================================================== -->
+    <section id="about" class="section-block section-alt">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">01 / Executive Summary</span>
+          <h2 class="section-heading">Professional Profile</h2>
+          <p class="section-sub">End-to-end engineering leadership across enterprise front-end architectures, full-stack SaaS platforms, and AI automation systems.</p>
+        </div>
+
+        <div class="row gy-4 align-items-stretch">
+          <!-- Left Column: Full Profile Narrative & Architectural Pillars -->
+          <div class="col-lg-8 fade-in-up">
+            <div class="surface-card h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="profile-quote-badge">
+                  <i class="bi bi-terminal-plus"></i> Systems Architect &amp; Product Engineer
+                </div>
+                <p class="profile-paragraph">
+                  Results-driven Front-End &amp; Full-Stack Software Engineer with <strong>4+ years of commercial experience</strong> architecting, scaling, and maintaining business-critical enterprise web applications. Deep expertise in <strong>Angular (v12–v21)</strong>, <strong>TypeScript</strong>, <strong>RxJS</strong>, <strong>Signals</strong>, and complex JSON-driven form engines (<strong>SurveyJS</strong>), alongside modern full-stack product delivery using <strong>React 18/19</strong>, <strong>Next.js</strong>, <strong>NestJS</strong>, <strong>.NET / ASP.NET Core</strong>, and <strong>Supabase/PostgreSQL</strong>.
+                </p>
+                <p class="profile-paragraph mb-4">
+                  Proven <strong>3+ year track record</strong> as a core engineer on the enterprise <em>Alive Health / CST Survey Platform</em>, delivering dynamic clinical questionnaires, biometric data visualizations, multilingual localization pipelines, and AI-assisted workflows. Highly adept at owning features end-to-end—from system architecture and REST/SignalR API integration to Playwright browser automation and Linux VPS production deployments.
+                </p>
+              </div>
+
+              <div class="pillars-grid">
+                <div class="pillar-item">
+                  <div class="pillar-icon"><i class="bi bi-layers-half"></i></div>
+                  <div>
+                    <h4>Enterprise Angular &amp; SurveyJS Engines</h4>
+                    <p>Schema-driven questionnaires, multi-stage conditional branching, calculated biometric expressions, and Angular v12–v21 modernization.</p>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-info"><span>TypeScript / JS</span><span>95%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 95%;"></div>
+                <div class="pillar-item">
+                  <div class="pillar-icon"><i class="bi bi-boxes"></i></div>
+                  <div>
+                    <h4>Full-Stack SaaS Delivery</h4>
+                    <p>Production apps built with React 18/19, Next.js 16, NestJS, .NET Core Web APIs, SignalR WebSockets, Prisma ORM, and Supabase/PostgreSQL.</p>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-info"><span>HTML & CSS/SASS</span><span>90%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 90%;"></div>
+                <div class="pillar-item">
+                  <div class="pillar-icon"><i class="bi bi-bar-chart-steps"></i></div>
+                  <div>
+                    <h4>Biometric Data Viz, GIS &amp; Reporting</h4>
+                    <p>Apache ECharts, Swimlane ngx-charts, Recharts, Leaflet GIS maps, and automated PDF/Excel/ZIP report compilation engines.</p>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-info"><span>React</span><span>80%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 80%;"></div>
+                <div class="pillar-item">
+                  <div class="pillar-icon"><i class="bi bi-cpu"></i></div>
+                  <div>
+                    <h4>Agentic AI &amp; Browser Automation</h4>
+                    <p>Google Gemini &amp; OpenAI API workflows, prompt caching &amp; sanitization, RCA copilots, and headless Playwright ATS automation workers.</p>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="skill-item">
-                  <div class="skill-info"><span>Bootstrap</span><span>90%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 90%;"></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Quick Facts, Education & Languages -->
+          <div class="col-lg-4 fade-in-up delay-1">
+            <div class="surface-card h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="card-subtitle-head">
+                  <i class="bi bi-person-vcard"></i> Credentials &amp; Details
+                </h3>
+                <ul class="Quick-facts-list">
+                  <li>
+                    <span class="fact-label">Full Name</span>
+                    <span class="fact-value">Halim Azizi</span>
+                  </li>
+                  <li>
+                    <span class="fact-label">Location</span>
+                    <span class="fact-value">Tetovo, North Macedonia</span>
+                  </li>
+                  <li>
+                    <span class="fact-label">Experience</span>
+                    <span class="fact-value">4+ Years Commercial</span>
+                  </li>
+                  <li>
+                    <span class="fact-label">Current Role</span>
+                    <span class="fact-value">FE Engineer @ ONINE / dev909</span>
+                  </li>
+                  <li>
+                    <span class="fact-label">Email</span>
+                    <span class="fact-value"><a href="mailto:halimazizi111@hotmail.com">halimazizi111@hotmail.com</a></span>
+                  </li>
+                  <li>
+                    <span class="fact-label">Phone</span>
+                    <span class="fact-value"><a href="tel:+38972652113">+389 72 652 113</a></span>
+                  </li>
+                </ul>
+
+                <div class="divider-line my-4"></div>
+
+                <h3 class="card-subtitle-head">
+                  <i class="bi bi-mortarboard"></i> Education
+                </h3>
+                <div class="edu-summary-box">
+                  <div class="edu-degree">BSc in Computer Science (Applied Informatics)</div>
+                  <div class="edu-uni">University of Tetova, Faculty of Natural Sciences and Mathematics</div>
+                  <div class="edu-year">2018 – 2022</div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <div class="divider-line mb-3"></div>
+                <h3 class="card-subtitle-head">
+                  <i class="bi bi-translate"></i> Spoken Languages
+                </h3>
+                <div class="lang-badges">
+                  <div class="lang-row">
+                    <span class="lang-name">Albanian</span>
+                    <span class="lang-level native">Native</span>
+                  </div>
+                  <div class="lang-row">
+                    <span class="lang-name">English</span>
+                    <span class="lang-level fluent">Full Professional Proficiency</span>
+                  </div>
+                  <div class="lang-row">
+                    <span class="lang-name">Macedonian</span>
+                    <span class="lang-level pro">Professional Working Proficiency</span>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-info"><span>Git</span><span>85%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 85%;"></div>
-                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         TECHNICAL EXPERTISE MATRIX (6 CV CATEGORIES)
+         =================================================================== -->
+    <section id="expertise" class="section-block">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">02 / Technical Arsenal</span>
+          <h2 class="section-heading">Technical Expertise</h2>
+          <p class="section-sub">Comprehensive production stack spanning enterprise front-end frameworks, dynamic form engines, real-time backends, AI integrations, and cloud infrastructure.</p>
+        </div>
+
+        <!-- Interactive Filter & Search Controls -->
+        <div class="expertise-controls fade-in-up">
+          <div class="skill-filter-pills" role="tablist" aria-label="Filter skills by category">
+            <button type="button" class="skill-filter-btn active" data-category="all">All Domains</button>
+            <button type="button" class="skill-filter-btn" data-category="frontend">Front-End Core</button>
+            <button type="button" class="skill-filter-btn" data-category="enterprise-ui">Enterprise UI &amp; Forms</button>
+            <button type="button" class="skill-filter-btn" data-category="dataviz">Data Viz, Maps &amp; Docs</button>
+            <button type="button" class="skill-filter-btn" data-category="backend">Back-End &amp; Databases</button>
+            <button type="button" class="skill-filter-btn" data-category="ai-auth">AI, Auth &amp; Integrations</button>
+            <button type="button" class="skill-filter-btn" data-category="devops">Testing, DevOps &amp; Infra</button>
+          </div>
+          <div class="skill-search-wrap">
+            <i class="bi bi-search"></i>
+            <input type="text" id="skillSearchInput" placeholder="Highlight technology (e.g. Angular, SurveyJS, .NET, Playwright)..." aria-label="Search technical skills">
+          </div>
+        </div>
+
+        <!-- 6-Card Technical Expertise Grid -->
+        <div class="row gy-4 mt-2" id="expertiseGrid">
+          <!-- 1. Front-End Core -->
+          <div class="col-lg-6 expertise-col fade-in-up" data-category="frontend">
+            <div class="surface-card expertise-card h-100">
+              <div class="expertise-card-head">
+                <div class="expertise-icon"><i class="bi bi-code-slash"></i></div>
+                <div>
+                  <h3>Front-End Core</h3>
+                  <span class="expertise-sub">Modern Reactive UI Frameworks &amp; Styling</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-info"><span>Ionic</span><span>80%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 80%;"></div>
-                  </div>
+              </div>
+              <div class="tech-tags-wrap">
+                <span class="tech-tag highlight">Angular (v12–v21)</span>
+                <span class="tech-tag highlight">Standalone Components</span>
+                <span class="tech-tag highlight">Angular Signals</span>
+                <span class="tech-tag highlight">TypeScript</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag highlight">RxJS</span>
+                <span class="tech-tag highlight">React (v18/v19)</span>
+                <span class="tech-tag highlight">Next.js (App Router)</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">SCSS / Sass</span>
+                <span class="tech-tag">Tailwind CSS (v3/v4)</span>
+                <span class="tech-tag">Ionic</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Enterprise UI & Forms -->
+          <div class="col-lg-6 expertise-col fade-in-up delay-1" data-category="enterprise-ui">
+            <div class="surface-card expertise-card h-100">
+              <div class="expertise-card-head">
+                <div class="expertise-icon"><i class="bi bi-ui-checks-grid"></i></div>
+                <div>
+                  <h3>Enterprise UI &amp; Forms</h3>
+                  <span class="expertise-sub">Schema-Driven Form Engines &amp; Component Systems</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-info"><span>WordPress</span><span>75%</span></div>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar neon-bar" style="width: 75%;"></div>
-                  </div>
+              </div>
+              <div class="tech-tags-wrap">
+                <span class="tech-tag highlight">SurveyJS (survey-core)</span>
+                <span class="tech-tag highlight">survey-angular-ui</span>
+                <span class="tech-tag highlight">survey-creator</span>
+                <span class="tech-tag">JSON-Driven Dynamic Forms</span>
+                <span class="tech-tag">Conditional Branching</span>
+                <span class="tech-tag">Nebular / ngx-admin</span>
+                <span class="tech-tag">CoreUI</span>
+                <span class="tech-tag">Angular CDK</span>
+                <span class="tech-tag">shadcn/ui</span>
+                <span class="tech-tag">Radix UI</span>
+                <span class="tech-tag">Framer Motion</span>
+                <span class="tech-tag">CKEditor 5</span>
+                <span class="tech-tag">TinyMCE</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Data Viz, Maps & Docs -->
+          <div class="col-lg-6 expertise-col fade-in-up" data-category="dataviz">
+            <div class="surface-card expertise-card h-100">
+              <div class="expertise-card-head">
+                <div class="expertise-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <div>
+                  <h3>Data Viz, Maps &amp; Docs</h3>
+                  <span class="expertise-sub">Telemetry Charts, Geolocation GIS &amp; Client-Side Exports</span>
                 </div>
+              </div>
+              <div class="tech-tags-wrap">
+                <span class="tech-tag highlight">Apache ECharts</span>
+                <span class="tech-tag highlight">Swimlane ngx-charts</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">Recharts</span>
+                <span class="tech-tag highlight">Leaflet &amp; React-Leaflet (Geolocation/GIS)</span>
+                <span class="tech-tag">jsPDF &amp; AutoTable</span>
+                <span class="tech-tag">html2canvas</span>
+                <span class="tech-tag">JSZip</span>
+                <span class="tech-tag">SheetJS (xlsx)</span>
+                <span class="tech-tag">angularx-qrcode</span>
+                <span class="tech-tag">@dnd-kit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Back-End & Databases -->
+          <div class="col-lg-6 expertise-col fade-in-up delay-1" data-category="backend">
+            <div class="surface-card expertise-card h-100">
+              <div class="expertise-card-head">
+                <div class="expertise-icon"><i class="bi bi-database-check"></i></div>
+                <div>
+                  <h3>Back-End &amp; Databases</h3>
+                  <span class="expertise-sub">APIs, Real-Time WebSockets, ORMs &amp; Cloud Data</span>
+                </div>
+              </div>
+              <div class="tech-tags-wrap">
+                <span class="tech-tag highlight">.NET / ASP.NET Core Web API (C#)</span>
+                <span class="tech-tag highlight">NestJS</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag highlight">SignalR (Real-Time WebSockets)</span>
+                <span class="tech-tag">Prisma ORM</span>
+                <span class="tech-tag highlight">PostgreSQL</span>
+                <span class="tech-tag highlight">Supabase (Auth, PostgreSQL, RLS, Edge Functions, Storage)</span>
+                <span class="tech-tag">Redis &amp; BullMQ</span>
+                <span class="tech-tag">SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. AI, Auth & Integrations -->
+          <div class="col-lg-6 expertise-col fade-in-up" data-category="ai-auth">
+            <div class="surface-card expertise-card h-100">
+              <div class="expertise-card-head">
+                <div class="expertise-icon"><i class="bi bi-stars"></i></div>
+                <div>
+                  <h3>AI, Auth &amp; Integrations</h3>
+                  <span class="expertise-sub">LLM Copilots, Enterprise SSO, Billing &amp; Localization</span>
+                </div>
+              </div>
+              <div class="tech-tags-wrap">
+                <span class="tech-tag highlight">Google Gemini API</span>
+                <span class="tech-tag highlight">OpenAI API</span>
+                <span class="tech-tag highlight">Agentic AI Copilots</span>
+                <span class="tech-tag">Prompt Caching &amp; Sanitization</span>
+                <span class="tech-tag highlight">Azure AD MSAL (@azure/msal-angular)</span>
+                <span class="tech-tag">OAuth2 / JWT</span>
+                <span class="tech-tag">Polar.sh Billing</span>
+                <span class="tech-tag">ngx-translate</span>
+                <span class="tech-tag">i18next</span>
+                <span class="tech-tag">Google / Bing Translate APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Testing, DevOps & Infra -->
+          <div class="col-lg-6 expertise-col fade-in-up delay-1" data-category="devops">
+            <div class="surface-card expertise-card h-100">
+              <div class="expertise-card-head">
+                <div class="expertise-icon"><i class="bi bi-cloud-check"></i></div>
+                <div>
+                  <h3>Testing, DevOps &amp; Infra</h3>
+                  <span class="expertise-sub">Browser Automation, Containers, Linux VPS &amp; Edge</span>
+                </div>
+              </div>
+              <div class="tech-tags-wrap">
+                <span class="tech-tag highlight">Playwright (Browser Automation &amp; E2E)</span>
+                <span class="tech-tag">Vitest</span>
+                <span class="tech-tag">Jasmine / Karma</span>
+                <span class="tech-tag highlight">Docker &amp; Docker Compose</span>
+                <span class="tech-tag">Nginx</span>
+                <span class="tech-tag highlight">Hetzner Linux VPS</span>
+                <span class="tech-tag">Cloudflare Pages / Workers &amp; R2</span>
+                <span class="tech-tag">Netlify</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">GitHub / GitLab CI/CD</span>
+                <span class="tech-tag">Compodoc</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PROFESSIONAL EXPERIENCE SECTION
+         =================================================================== -->
+    <section id="experience" class="section-block section-alt">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">03 / Career Progression</span>
+          <h2 class="section-heading">Professional Experience</h2>
+          <p class="section-sub">4+ years of commercial software engineering delivering enterprise healthcare platforms, construction SaaS, AI automation, and cross-platform business systems.</p>
+        </div>
+
+        <div class="experience-timeline">
+          <!-- Role 1: ONINE / dev909 -->
+          <article class="exp-card surface-card fade-in-up">
+            <div class="exp-card-marker current"></div>
+            <div class="exp-card-header">
+              <div>
+                <div class="exp-badge-row">
+                  <span class="tenure-badge active-role">December 2022 – Present (3+ Years)</span>
+                  <span class="location-badge"><i class="bi bi-geo-alt"></i> Skopje, North Macedonia</span>
+                </div>
+                <h3 class="exp-role-title">Front-End Software Engineer</h3>
+                <div class="exp-company-name">ONINE / dev909</div>
+              </div>
+              <div class="exp-highlight-tag">
+                <span>Enterprise Healthcare &amp; Survey SaaS</span>
               </div>
             </div>
 
-            <h3 class="mt-5 mb-4">Interests & Approach</h3>
-            <div class="interests-grid">
-              <div class="interest-pill"><i class="ri-store-line"></i> Problem Solving</div>
-              <div class="interest-pill"><i class="ri-bar-chart-box-line"></i> Technology Exploration</div>
-              <div class="interest-pill"><i class="ri-calendar-todo-line"></i> User-Centric Design</div>
-              <div class="interest-pill"><i class="ri-paint-brush-line"></i> Coding Patterns</div>
-              <div class="interest-pill"><i class="ri-gradienter-line"></i> Mobile-First Approach</div>
-              <div class="interest-pill"><i class="ri-price-tag-2-line"></i> Research</div>
+            <div class="exp-stack-bar">
+              <span class="stack-bar-label">Core Stack:</span>
+              <div class="stack-bar-pills">
+                <span>Angular (up to v21)</span>
+                <span>TypeScript</span>
+                <span>RxJS</span>
+                <span>SurveyJS</span>
+                <span>Nebular / ngx-admin</span>
+                <span>CoreUI</span>
+                <span>Azure MSAL</span>
+                <span>Apache ECharts</span>
+                <span>ngx-charts</span>
+                <span>CKEditor 5</span>
+                <span>jsPDF</span>
+                <span>ngx-translate</span>
+                <span>.NET / ASP.NET Core REST APIs</span>
+                <span>Ionic</span>
+              </div>
+            </div>
+
+            <ul class="exp-bullet-list">
+              <li>
+                <strong>Lead Front-End Engineering on Alive Health / CST Survey Platform (3+ Years):</strong>
+                Architected, maintained, and continuously evolved a large-scale enterprise health assessment and operational survey platform built on Angular, Nebular, and .NET REST services.
+              </li>
+              <li>
+                <strong>Complex SurveyJS &amp; JSON Form Engine:</strong>
+                Engineered sophisticated, schema-driven questionnaires using <code>survey-angular-ui</code> and <code>survey-creator-angular</code> with multi-stage conditional branching, custom validation rules, calculated biometric expressions, and role/task-specific rendering.
+              </li>
+              <li>
+                <strong>Health &amp; Biometric Analytics Dashboards:</strong>
+                Built interactive visual analytics modules using <strong>Apache ECharts</strong>, <strong>Swimlane ngx-charts</strong>, and <strong>Chart.js</strong>, including contrast analysis dashboards, dynamic health plots, body measurement tracking, and integrated audio/podcast media players.
+              </li>
+              <li>
+                <strong>AI Text Generation &amp; Multilingual Localization:</strong>
+                Implemented AI-assisted dynamic health tip generation with prompt caching and filter pipelines, paired with automated multi-language translation workflows using <code>@ngx-translate/core</code>, Google Translate API, and Bing Translate API.
+              </li>
+              <li>
+                <strong>Enterprise Security, Reporting &amp; Rich Media:</strong>
+                Integrated <strong>Azure Active Directory (MSAL)</strong> authentication and Nebular role-based access control (RBAC); engineered client-side PDF/ZIP report exports (<code>jsPDF</code>, <code>html2canvas</code>, <code>JSZip</code>), QR code workflows (<code>angularx-qrcode</code>), and rich text authoring via <strong>CKEditor 5</strong> and <strong>TinyMCE</strong>.
+              </li>
+              <li>
+                <strong>Workforce, Warehouse &amp; POS Systems:</strong>
+                Delivered cross-platform enterprise modules using <strong>Angular</strong> and <strong>Ionic</strong> covering employee time tracking, warehouse inventory workflows, automated PDF invoice generation, and Point-of-Sale (POS) terminals connected to .NET APIs.
+              </li>
+              <li>
+                <strong>Framework Modernization &amp; Production Delivery:</strong>
+                Led framework migrations up to Angular 21, optimized high-memory build pipelines (AOT production builds deployed to Linux Nginx servers), and collaborated closely with .NET backend engineers to debug complex payload mappings and state regressions.
+              </li>
+            </ul>
+          </article>
+
+          <!-- Role 2: Independent & Client Products -->
+          <article class="exp-card surface-card fade-in-up">
+            <div class="exp-card-marker current"></div>
+            <div class="exp-card-header">
+              <div>
+                <div class="exp-badge-row">
+                  <span class="tenure-badge active-role">March 2023 – Present</span>
+                  <span class="location-badge"><i class="bi bi-globe2"></i> Remote / Contract</span>
+                </div>
+                <h3 class="exp-role-title">Full-Stack &amp; Front-End Engineer (Independent &amp; Client Products)</h3>
+                <div class="exp-company-name">Independent Product Engineering &amp; Consulting</div>
+              </div>
+              <div class="exp-highlight-tag">
+                <span>Full-Stack SaaS &amp; AI Systems</span>
+              </div>
+            </div>
+
+            <div class="exp-stack-bar">
+              <span class="stack-bar-label">Core Stack:</span>
+              <div class="stack-bar-pills">
+                <span>Angular 19</span>
+                <span>React 18/19</span>
+                <span>Next.js 16</span>
+                <span>NestJS</span>
+                <span>.NET Core</span>
+                <span>TypeScript</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+                <span>Prisma</span>
+                <span>Playwright</span>
+                <span>SignalR</span>
+                <span>Tailwind CSS</span>
+                <span>Docker</span>
+                <span>Hetzner VPS</span>
+                <span>Cloudflare</span>
+              </div>
+            </div>
+
+            <ul class="exp-bullet-list">
+              <li>
+                <strong>End-to-End SaaS &amp; Enterprise Architecture:</strong>
+                Architect and deliver production-ready SaaS applications, enterprise web platforms, and AI-powered automation tools from initial system design to cloud deployment.
+              </li>
+              <li>
+                <strong>Reactive UI &amp; Real-Time Backends:</strong>
+                Design responsive, accessible component libraries and real-time dashboards using Angular Standalone Components, Signals, React, Next.js, and Tailwind CSS, backed by NestJS, .NET Core, and Supabase/PostgreSQL.
+              </li>
+              <li>
+                <strong>Browser Automation &amp; Cloud Infrastructure:</strong>
+                Build end-to-end browser automation workers with Playwright, integrate LLM workflows (Google Gemini, OpenAI), and manage containerized production deployments on Hetzner VPS with Docker, Nginx, and Cloudflare.
+              </li>
+            </ul>
+          </article>
+
+          <!-- Role 3: Capstone MK -->
+          <article class="exp-card surface-card fade-in-up">
+            <div class="exp-card-marker"></div>
+            <div class="exp-card-header">
+              <div>
+                <div class="exp-badge-row">
+                  <span class="tenure-badge">March 2022 – October 2022</span>
+                  <span class="location-badge"><i class="bi bi-geo-alt"></i> Tetovo, North Macedonia</span>
+                </div>
+                <h3 class="exp-role-title">Junior Front-End Developer</h3>
+                <div class="exp-company-name">Capstone MK</div>
+              </div>
+            </div>
+            <ul class="exp-bullet-list mt-2">
+              <li>
+                Developed and maintained modular Angular and TypeScript UI components, responsive page layouts, and SCSS styling improvements across client web applications; collaborated in Agile sprints and cross-browser UI debugging.
+              </li>
+            </ul>
+          </article>
+
+          <!-- Role 4: ISolve -->
+          <article class="exp-card surface-card fade-in-up">
+            <div class="exp-card-marker"></div>
+            <div class="exp-card-header">
+              <div>
+                <div class="exp-badge-row">
+                  <span class="tenure-badge">August 2020 – October 2020</span>
+                  <span class="location-badge"><i class="bi bi-geo-alt"></i> Tetovo, North Macedonia</span>
+                </div>
+                <h3 class="exp-role-title">Front-End Development Intern</h3>
+                <div class="exp-company-name">ISolve</div>
+              </div>
+            </div>
+            <ul class="exp-bullet-list mt-2">
+              <li>
+                Assisted senior engineers with HTML5, CSS3, JavaScript, and Angular UI implementation, component bug fixes, and responsive layout testing.
+              </li>
+            </ul>
+          </article>
+
+          <!-- Education Card in Timeline -->
+          <article class="exp-card surface-card fade-in-up">
+            <div class="exp-card-marker edu-marker"></div>
+            <div class="exp-card-header">
+              <div>
+                <div class="exp-badge-row">
+                  <span class="tenure-badge">2018 – 2022</span>
+                  <span class="location-badge"><i class="bi bi-mortarboard-fill"></i> Academic Degree</span>
+                </div>
+                <h3 class="exp-role-title">BSc in Computer Science (Applied Informatics)</h3>
+                <div class="exp-company-name">University of Tetova — Faculty of Natural Sciences and Mathematics</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         KEY PRODUCT & SYSTEMS ARCHITECTURE PORTFOLIO SECTION
+         =================================================================== -->
+    <section id="portfolio" class="section-block">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">04 / Production Case Studies</span>
+          <h2 class="section-heading">Key Product &amp; Systems Architecture Portfolio</h2>
+          <p class="section-sub">Deep-dive architectural breakdown of flagship enterprise platforms, multi-tenant SaaS products, autonomous AI pipelines, and commercial web systems.</p>
+        </div>
+
+        <!-- Portfolio Filter Buttons -->
+        <div class="portfolio-filter-bar fade-in-up" role="tablist" aria-label="Filter portfolio systems">
+          <button type="button" class="pf-filter-btn active" data-filter="all">All Flagship Systems (5)</button>
+          <button type="button" class="pf-filter-btn" data-filter="angular">Enterprise Angular &amp; .NET</button>
+          <button type="button" class="pf-filter-btn" data-filter="react-nextjs">React &amp; Next.js SaaS</button>
+          <button type="button" class="pf-filter-btn" data-filter="ai-automation">AI &amp; Browser Automation</button>
+        </div>
+
+        <!-- Flagship Systems Cards -->
+        <div class="portfolio-systems-list mt-4">
+
+          <!-- SYSTEM 1: Alive Health & CST Enterprise Survey Platform -->
+          <article class="system-case-card surface-card fade-in-up" data-groups="angular ai-automation">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-lg-5">
+                <div class="system-visual-preview theme-healthcare">
+                  <div class="sys-preview-top">
+                    <span class="sys-num">01</span>
+                    <span class="sys-badge">ONINE / dev909 &bull; 3+ Years</span>
+                  </div>
+                  <div class="sys-diagram-box">
+                    <div class="diagram-node main-node">
+                      <i class="bi bi-clipboard2-pulse"></i>
+                      <span>Angular 21 &amp; SurveyJS Clinical Engine</span>
+                    </div>
+                    <div class="diagram-sub-row">
+                      <div class="diagram-chip"><i class="bi bi-bar-chart-line"></i> ECharts Biometrics</div>
+                      <div class="diagram-chip"><i class="bi bi-shield-lock"></i> Azure AD MSAL</div>
+                      <div class="diagram-chip"><i class="bi bi-translate"></i> AI + Multi-Lang</div>
+                      <div class="diagram-chip"><i class="bi bi-file-earmark-pdf"></i> PDF/ZIP Reports</div>
+                    </div>
+                  </div>
+                  <div class="sys-preview-footer">
+                    <span>Enterprise Healthcare &amp; Assessment SaaS</span>
+                    <button type="button" class="btn-inspect-sys" data-project="alive-health">
+                      Architecture Specs <i class="bi bi-arrows-angle-expand"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="system-case-body">
+                  <div class="sys-meta-line">
+                    <span class="sys-category">Enterprise Healthcare &amp; Assessment SaaS (3+ Years)</span>
+                    <span class="sys-org">ONINE / dev909</span>
+                  </div>
+                  <h3 class="sys-title">1. Alive Health &amp; CST Enterprise Survey Platform</h3>
+
+                  <div class="sys-tech-used">
+                    <strong>Tech Used:</strong>
+                    <span>Angular 21</span>
+                    <span>TypeScript</span>
+                    <span>RxJS</span>
+                    <span>SurveyJS (Core, Angular UI, Creator)</span>
+                    <span>Nebular 17</span>
+                    <span>CoreUI 5</span>
+                    <span>Azure MSAL</span>
+                    <span>Apache ECharts</span>
+                    <span>Swimlane ngx-charts</span>
+                    <span>CKEditor 5</span>
+                    <span>TinyMCE</span>
+                    <span>jsPDF</span>
+                    <span>html2canvas</span>
+                    <span>JSZip</span>
+                    <span>angularx-qrcode</span>
+                    <span>ngx-translate</span>
+                    <span>.NET Core APIs</span>
+                  </div>
+
+                  <ul class="sys-bullets">
+                    <li>
+                      <strong>Dynamic Assessment Engine:</strong>
+                      Built a comprehensive clinical survey creator and runner supporting complex JSON schemas, dynamic branching, multi-role review states, and real-time score evaluation.
+                    </li>
+                    <li>
+                      <strong>Visual Health Telemetry &amp; Localization:</strong>
+                      Engineered interactive biometric plots, contrast analysis views, and multi-language translation pipelines with automated caching and PDF health report compilation.
+                    </li>
+                  </ul>
+
+                  <div class="sys-card-actions">
+                    <button type="button" class="btn-sys-detail" data-project="alive-health">
+                      <i class="bi bi-layers"></i> View Full Architectural Breakdown
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SYSTEM 2: BAU Leader (SiteWise Pro) -->
+          <article class="system-case-card surface-card fade-in-up" data-groups="react-nextjs">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-lg-5">
+                <div class="system-visual-preview theme-construction">
+                  <div class="sys-preview-top">
+                    <span class="sys-num">02</span>
+                    <span class="sys-badge">Full-Stack SaaS &bull; 23 Pages</span>
+                  </div>
+                  <div class="sys-diagram-box">
+                    <div class="diagram-node main-node">
+                      <i class="bi bi-building-check"></i>
+                      <span>React 18 + Supabase RLS Construction SaaS</span>
+                    </div>
+                    <div class="diagram-sub-row">
+                      <div class="diagram-chip"><i class="bi bi-folder-check"></i> Defect Hierarchy</div>
+                      <div class="diagram-chip"><i class="bi bi-pin-map"></i> Leaflet GIS Map</div>
+                      <div class="diagram-chip"><i class="bi bi-kanban"></i> @dnd-kit Boards</div>
+                      <div class="diagram-chip"><i class="bi bi-credit-card"></i> Polar.sh Edge</div>
+                    </div>
+                  </div>
+                  <div class="sys-preview-footer">
+                    <span>Construction Site &amp; Defect Management SaaS</span>
+                    <button type="button" class="btn-inspect-sys" data-project="bau-leader">
+                      Architecture Specs <i class="bi bi-arrows-angle-expand"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="system-case-body">
+                  <div class="sys-meta-line">
+                    <span class="sys-category">Construction Site &amp; Defect Management SaaS Platform</span>
+                    <span class="sys-org">Full-Stack SaaS</span>
+                  </div>
+                  <h3 class="sys-title">2. BAU Leader (SiteWise Pro)</h3>
+
+                  <div class="sys-tech-used">
+                    <strong>Tech Used:</strong>
+                    <span>React 18</span>
+                    <span>TypeScript</span>
+                    <span>Vite</span>
+                    <span>Tailwind CSS</span>
+                    <span>shadcn/ui (Radix UI)</span>
+                    <span>Supabase (PostgreSQL, Auth, RLS, Storage, Edge Functions)</span>
+                    <span>TanStack React Query</span>
+                    <span>React Hook Form</span>
+                    <span>Zod</span>
+                    <span>@dnd-kit</span>
+                    <span>Leaflet / React-Leaflet</span>
+                    <span>Recharts</span>
+                    <span>jsPDF-AutoTable</span>
+                    <span>SheetJS (xlsx)</span>
+                    <span>i18next (EN/DE)</span>
+                    <span>Polar.sh Billing</span>
+                    <span>Cloudflare</span>
+                    <span>Vitest</span>
+                  </div>
+
+                  <ul class="sys-bullets">
+                    <li>
+                      <strong>23-Page Construction SaaS Architecture:</strong>
+                      Engineered a full-featured construction management platform with 30+ custom hooks, bilingual German/English (<code>i18next</code>) support, role-based project workspaces, and Web Push notifications.
+                    </li>
+                    <li>
+                      <strong>Defect Folder Hierarchy &amp; Multi-Image Evidence:</strong>
+                      Built a structured defect reporting engine enabling engineers to organize defects into custom building/unit folders (e.g., House A, House B), attach multi-image photo evidence via Supabase Storage, and export structured PDF/Excel site reports.
+                    </li>
+                    <li>
+                      <strong>Geolocation GIS, Whiteboards &amp; Billing:</strong>
+                      Integrated interactive <strong>Leaflet</strong> site geolocation maps, drag-and-drop kanban boards (<code>@dnd-kit</code>), collaborative project whiteboards, document management tabs, and automated subscription billing via <strong>Polar.sh</strong> Deno Edge Functions.
+                    </li>
+                  </ul>
+
+                  <div class="sys-card-actions">
+                    <button type="button" class="btn-sys-detail" data-project="bau-leader">
+                      <i class="bi bi-layers"></i> View Full Architectural Breakdown
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SYSTEM 3: AI AutoApply & Job Tinder -->
+          <article class="system-case-card surface-card fade-in-up" data-groups="angular ai-automation">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-lg-5">
+                <div class="system-visual-preview theme-ai">
+                  <div class="sys-preview-top">
+                    <span class="sys-num">03</span>
+                    <span class="sys-badge">Full-Stack Monorepo &bull; 14 Pages</span>
+                  </div>
+                  <div class="sys-diagram-box">
+                    <div class="diagram-node main-node">
+                      <i class="bi bi-robot"></i>
+                      <span>Angular 19 Signals + NestJS + Playwright Worker</span>
+                    </div>
+                    <div class="diagram-sub-row">
+                      <div class="diagram-chip"><i class="bi bi-stars"></i> Gemini &amp; OpenAI</div>
+                      <div class="diagram-chip"><i class="bi bi-Sliders"></i> 7-Factor Scoring</div>
+                      <div class="diagram-chip"><i class="bi bi-window-stack"></i> Greenhouse/Lever/Ashby</div>
+                      <div class="diagram-chip"><i class="bi bi-layers-fill"></i> Redis + BullMQ</div>
+                    </div>
+                  </div>
+                  <div class="sys-preview-footer">
+                    <span>Autonomous AI Job Discovery &amp; ATS Automation</span>
+                    <button type="button" class="btn-inspect-sys" data-project="ai-autoapply">
+                      Architecture Specs <i class="bi bi-arrows-angle-expand"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="system-case-body">
+                  <div class="sys-meta-line">
+                    <span class="sys-category">Autonomous AI Job Discovery &amp; Browser Automation Platform</span>
+                    <span class="sys-org">Full-Stack Monorepo</span>
+                  </div>
+                  <h3 class="sys-title">3. AI AutoApply &amp; Job Tinder</h3>
+
+                  <div class="sys-tech-used">
+                    <strong>Tech Used:</strong>
+                    <span>Angular 19 (Standalone, Signals)</span>
+                    <span>Tailwind CSS</span>
+                    <span>NestJS</span>
+                    <span>Swagger / OpenAPI</span>
+                    <span>Prisma ORM</span>
+                    <span>PostgreSQL</span>
+                    <span>Supabase</span>
+                    <span>Redis</span>
+                    <span>BullMQ</span>
+                    <span>Playwright (Chromium)</span>
+                    <span>Google Gemini API</span>
+                    <span>OpenAI API</span>
+                    <span>Docker Compose</span>
+                    <span>Nginx</span>
+                  </div>
+
+                  <ul class="sys-bullets">
+                    <li>
+                      <strong>14-Page Angular 19 SaaS Dashboard &amp; NestJS API:</strong>
+                      Built a full-stack TypeScript monorepo featuring a reactive Angular Signals dashboard, Small Company Explorer, Analytics funnel, and a modular NestJS REST API with Prisma ORM.
+                    </li>
+                    <li>
+                      <strong>AI Matching &amp; Document Tailoring Engine:</strong>
+                      Implemented provider-agnostic LLM integration (Gemini &amp; OpenAI) with 7-factor explainable match scoring, hard work-authorization eligibility gates, prompt-injection sanitization, and automated ATS single-column resume &amp; cover letter synthesis.
+                    </li>
+                    <li>
+                      <strong>Playwright ATS Automation Worker:</strong>
+                      Engineered headless Chromium adapters for <strong>Greenhouse</strong>, <strong>Lever</strong>, <strong>Ashby</strong>, and generic HTML forms with automated screening question resolution, CAPTCHA/login-wall safety halts, and screenshot confirmation verification.
+                    </li>
+                  </ul>
+
+                  <div class="sys-card-actions">
+                    <button type="button" class="btn-sys-detail" data-project="ai-autoapply">
+                      <i class="bi bi-layers"></i> View Full Architectural Breakdown
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SYSTEM 4: InfraMind AI -->
+          <article class="system-case-card surface-card fade-in-up" data-groups="angular ai-automation">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-lg-5">
+                <div class="system-visual-preview theme-telemetry">
+                  <div class="sys-preview-top">
+                    <span class="sys-num">04</span>
+                    <span class="sys-badge">Enterprise AI &amp; Telemetry</span>
+                  </div>
+                  <div class="sys-diagram-box">
+                    <div class="diagram-node main-node">
+                      <i class="bi bi-hdd-rack"></i>
+                      <span>Angular + .NET Core SignalR + AI RCA Copilot</span>
+                    </div>
+                    <div class="diagram-sub-row">
+                      <div class="diagram-chip"><i class="bi bi-broadcast"></i> Live SignalR Stream</div>
+                      <div class="diagram-chip"><i class="bi bi-thermometer-half"></i> Thermal &amp; GPU Plots</div>
+                      <div class="diagram-chip"><i class="bi bi-exclamation-triangle"></i> Anomaly Simulator</div>
+                      <div class="diagram-chip"><i class="bi bi-cpu-fill"></i> Automated RCA</div>
+                    </div>
+                  </div>
+                  <div class="sys-preview-footer">
+                    <span>Data Center &amp; Infrastructure Operations Platform</span>
+                    <button type="button" class="btn-inspect-sys" data-project="inframind">
+                      Architecture Specs <i class="bi bi-arrows-angle-expand"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="system-case-body">
+                  <div class="sys-meta-line">
+                    <span class="sys-category">AI-Powered Data Center &amp; Infrastructure Operations Platform</span>
+                    <span class="sys-org">Enterprise AI &amp; Telemetry</span>
+                  </div>
+                  <h3 class="sys-title">4. InfraMind AI</h3>
+
+                  <div class="sys-tech-used">
+                    <strong>Tech Used:</strong>
+                    <span>Angular</span>
+                    <span>TypeScript</span>
+                    <span>Apache ECharts</span>
+                    <span>.NET Core Web API (C#)</span>
+                    <span>SignalR (WebSockets)</span>
+                    <span>PostgreSQL</span>
+                    <span>Agentic AI Copilot</span>
+                    <span>Docker &amp; Docker Compose</span>
+                  </div>
+
+                  <ul class="sys-bullets">
+                    <li>
+                      <strong>Real-Time Data Center Telemetry:</strong>
+                      Developed an enterprise operations platform combining an Angular UI with a .NET Web API and <strong>SignalR</strong> to stream live rack, server, CPU, RAM, GPU, and thermal cooling metrics into interactive <strong>ECharts</strong> visualizations.
+                    </li>
+                    <li>
+                      <strong>Automated Incident Desk &amp; AI Operations Copilot:</strong>
+                      Built a background infrastructure anomaly simulator that triggers service-desk incidents, paired with an LLM Copilot that inspects server telemetry and performs automated root-cause analysis (RCA).
+                    </li>
+                  </ul>
+
+                  <div class="sys-card-actions">
+                    <button type="button" class="btn-sys-detail" data-project="inframind">
+                      <i class="bi bi-layers"></i> View Full Architectural Breakdown
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SYSTEM 5: Wedora, SaaS POS, BuzzQo & Atelier AA -->
+          <article class="system-case-card surface-card fade-in-up" data-groups="react-nextjs angular ai-automation">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-lg-5">
+                <div class="system-visual-preview theme-commercial">
+                  <div class="sys-preview-top">
+                    <span class="sys-num">05</span>
+                    <span class="sys-badge">Multi-Stack Commercial Delivery</span>
+                  </div>
+                  <div class="sys-diagram-box">
+                    <div class="diagram-node main-node">
+                      <i class="bi bi-window-fullscreen"></i>
+                      <span>Next.js 16 &bull; React 19 &bull; Python &bull; Cloud Infra</span>
+                    </div>
+                    <div class="diagram-sub-row">
+                      <div class="diagram-chip"><i class="bi bi-heart"></i> Wedora Marketplace</div>
+                      <div class="diagram-chip"><i class="bi bi-shop"></i> SaaS POS Systems</div>
+                      <div class="diagram-chip"><i class="bi bi-gear-wide-connected"></i> BuzzQo Automator</div>
+                      <div class="diagram-chip"><i class="bi bi-aspect-ratio"></i> Atelier AA Portal</div>
+                    </div>
+                  </div>
+                  <div class="sys-preview-footer">
+                    <span>Commercial Marketplaces, POS &amp; Automation</span>
+                    <button type="button" class="btn-inspect-sys" data-project="commercial-suite">
+                      Architecture Specs <i class="bi bi-arrows-angle-expand"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="system-case-body">
+                  <div class="sys-meta-line">
+                    <span class="sys-category">Commercial Web &amp; Automation Projects</span>
+                    <span class="sys-org">Multi-Stack Delivery</span>
+                  </div>
+                  <h3 class="sys-title">5. Wedora Marketplace, SaaS POS, BuzzQo Automator &amp; Atelier AA</h3>
+
+                  <div class="sys-tech-used">
+                    <strong>Tech Used:</strong>
+                    <span>Next.js 16</span>
+                    <span>React 19</span>
+                    <span>TypeScript</span>
+                    <span>Tailwind CSS v4</span>
+                    <span>Framer Motion</span>
+                    <span>Python</span>
+                    <span>HTML5 / SCSS</span>
+                    <span>Hetzner VPS</span>
+                    <span>Nginx</span>
+                    <span>Cloudflare R2</span>
+                  </div>
+
+                  <ul class="sys-bullets">
+                    <li>
+                      <strong>Wedora Wedding Marketplace:</strong>
+                      Built a modern vendor discovery and booking platform using <strong>Next.js 16</strong>, <strong>React 19</strong>, <strong>Tailwind CSS v4</strong>, and <strong>Framer Motion</strong> with rich animations and category filtering.
+                    </li>
+                    <li>
+                      <strong>SaaS POS, BuzzQo Flow Automator &amp; Atelier AA:</strong>
+                      Designed high-converting SaaS Point-of-Sale interfaces, engineered a Python-backed media variant &amp; export automation server (<em>BuzzQo</em>), and delivered pixel-perfect architectural showcase portals (<em>stage.atelier-aa.ch</em>).
+                    </li>
+                  </ul>
+
+                  <div class="sys-card-actions">
+                    <button type="button" class="btn-sys-detail" data-project="commercial-suite">
+                      <i class="bi bi-layers"></i> View Full Architectural Breakdown
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CORE ENGINEERING CAPABILITIES / SERVICES SECTION
+         =================================================================== -->
+    <section id="capabilities" class="section-block section-alt">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">05 / What I Deliver</span>
+          <h2 class="section-heading">Engineering Capabilities</h2>
+          <p class="section-sub">High-leverage technical execution across the full software lifecycle.</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 fade-in-up">
+            <div class="surface-card capability-card h-100">
+              <div class="cap-icon"><i class="bx bxl-angular"></i></div>
+              <h3>Enterprise Angular &amp; Signals Architecture</h3>
+              <p>Architecting and modernizing large-scale Angular applications (v12 through v21) using Standalone Components, Signals, RxJS state streams, Nebular/CoreUI, and AOT production optimizations.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 fade-in-up delay-1">
+            <div class="surface-card capability-card h-100">
+              <div class="cap-icon"><i class="bi bi-ui-radios"></i></div>
+              <h3>Complex JSON &amp; SurveyJS Form Engines</h3>
+              <p>Building multi-stage clinical and operational survey runners &amp; creators with <code>survey-core</code>, conditional branching, calculated biometric expressions, custom validators, and role-based workflows.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 fade-in-up delay-2">
+            <div class="surface-card capability-card h-100">
+              <div class="cap-icon"><i class="bx bxl-react"></i></div>
+              <h3>Full-Stack React, Next.js &amp; .NET / NestJS</h3>
+              <p>End-to-end SaaS delivery combining React 18/19, Next.js 16 (App Router), and Tailwind CSS with .NET Core Web APIs, NestJS, SignalR real-time WebSockets, Prisma ORM, and Supabase/PostgreSQL.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 fade-in-up">
+            <div class="surface-card capability-card h-100">
+              <div class="cap-icon"><i class="bi bi-robot"></i></div>
+              <h3>Agentic AI &amp; Playwright Automation</h3>
+              <p>Integrating Google Gemini and OpenAI APIs with prompt caching, injection sanitization, explainable scoring, and headless Chromium Playwright bots for complex browser workflows.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 fade-in-up delay-1">
+            <div class="surface-card capability-card h-100">
+              <div class="cap-icon"><i class="bi bi-bar-chart-line"></i></div>
+              <h3>Telemetry, GIS Maps &amp; Document Exports</h3>
+              <p>Crafting interactive data visualizations (Apache ECharts, ngx-charts, Recharts), Leaflet GIS site mapping, and client-side PDF/Excel/ZIP report compilation (jsPDF, SheetJS, html2canvas).</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 fade-in-up delay-2">
+            <div class="surface-card capability-card h-100">
+              <div class="cap-icon"><i class="bi bi-hdd-network"></i></div>
+              <h3>Enterprise Security &amp; Cloud Deployment</h3>
+              <p>Implementing Azure AD MSAL, OAuth2/JWT, and Supabase RLS security, backed by Docker Compose, Hetzner Linux VPS, Nginx reverse proxies, Cloudflare Workers/R2, and CI/CD pipelines.</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CONTACT & DIRECT CONNECT SECTION
+         =================================================================== -->
+    <section id="contact" class="section-block">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-eyebrow">06 / Direct Connect</span>
+          <h2 class="section-heading">Get In Touch</h2>
+          <p class="section-sub">Open to Senior Front-End, Full-Stack, and Systems Architecture opportunities. Reach out directly via email, phone, or LinkedIn.</p>
+        </div>
+
+        <div class="row gy-4 align-items-stretch">
+          <!-- Contact Info Column -->
+          <div class="col-lg-5 fade-in-up">
+            <div class="surface-card h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="contact-card-title">Direct Contact Channels</h3>
+                <p class="contact-card-desc">
+                  Based in Tetovo, North Macedonia (CET / UTC+1) and experienced in collaborating with distributed engineering teams across Europe and North America.
+                </p>
+
+                <div class="contact-channel-list">
+                  <div class="channel-item">
+                    <div class="channel-icon"><i class="bi bi-envelope-at"></i></div>
+                    <div class="channel-details">
+                      <span class="channel-label">Email Address</span>
+                      <a href="mailto:halimazizi111@hotmail.com" class="channel-val">halimazizi111@hotmail.com</a>
+                    </div>
+                    <button type="button" class="btn-copy-email" id="copyEmailBtn" data-email="halimazizi111@hotmail.com" title="Copy email address">
+                      <i class="bi bi-clipboard"></i>
+                    </button>
+                  </div>
+
+                  <div class="channel-item">
+                    <div class="channel-icon"><i class="bi bi-telephone"></i></div>
+                    <div class="channel-details">
+                      <span class="channel-label">Phone / WhatsApp</span>
+                      <a href="tel:+38972652113" class="channel-val">+389 72 652 113</a>
+                    </div>
+                  </div>
+
+                  <div class="channel-item">
+                    <div class="channel-icon"><i class="bi bi-linkedin"></i></div>
+                    <div class="channel-details">
+                      <span class="channel-label">LinkedIn Profile</span>
+                      <a href="https://linkedin.com/in/halim-azizi-262680206" target="_blank" rel="noopener" class="channel-val">linkedin.com/in/halim-azizi-262680206</a>
+                    </div>
+                  </div>
+
+                  <div class="channel-item">
+                    <div class="channel-icon"><i class="bi bi-github"></i></div>
+                    <div class="channel-details">
+                      <span class="channel-label">GitHub Repositories</span>
+                      <a href="https://github.com/halim-azizi" target="_blank" rel="noopener" class="channel-val">github.com/halim-azizi</a>
+                    </div>
+                  </div>
+
+                  <div class="channel-item">
+                    <div class="channel-icon"><i class="bi bi-geo-alt"></i></div>
+                    <div class="channel-details">
+                      <span class="channel-label">Location</span>
+                      <span class="channel-val">Tetovo, North Macedonia</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-top-subtle">
+                <a href="cv.html" class="btn-exec btn-exec-primary w-100 justify-content-center">
+                  <i class="bi bi-file-earmark-person"></i> Open Printable A4 CV
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Composer Column -->
+          <div class="col-lg-7 fade-in-up delay-1">
+            <div class="surface-card h-100">
+              <h3 class="contact-card-title">Send a Direct Inquiry</h3>
+              <p class="contact-card-desc">
+                Fill out the details below to compose a pre-formatted email directly to <code>halimazizi111@hotmail.com</code>.
+              </p>
+
+              <form id="directContactForm" class="contact-form-grid">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="senderName" class="form-label-custom">Your Name</label>
+                    <input type="text" id="senderName" class="form-input-custom" placeholder="e.g. Alex Morgan" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="senderCompany" class="form-label-custom">Company / Organization</label>
+                    <input type="text" id="senderCompany" class="form-input-custom" placeholder="e.g. Acme Enterprise">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="senderEmail" class="form-label-custom">Your Email</label>
+                    <input type="email" id="senderEmail" class="form-input-custom" placeholder="name@company.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inquiryType" class="form-label-custom">Inquiry Type</label>
+                    <select id="inquiryType" class="form-input-custom">
+                      <option value="Senior Front-End / Full-Stack Opportunity">Senior Front-End / Full-Stack Role</option>
+                      <option value="Enterprise Angular / SurveyJS Consulting">Enterprise Angular / SurveyJS Architecture</option>
+                      <option value="Full-Stack SaaS / AI Project">Full-Stack SaaS / AI Product Delivery</option>
+                      <option value="General Engineering Inquiry">General Engineering Inquiry</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="senderMessage" class="form-label-custom">Message / Project Brief</label>
+                    <textarea id="senderMessage" rows="5" class="form-input-custom" placeholder="Hi Halim, we'd love to discuss a Senior Software Engineer role / project with you..." required></textarea>
+                  </div>
+                  <div class="col-12 d-flex flex-wrap align-items-center justify-content-between gap-3 mt-2">
+                    <button type="submit" class="btn-exec btn-exec-primary">
+                      <i class="bi bi-send-fill"></i> Launch Email Client
+                    </button>
+                    <span class="form-note-text" id="formStatusMsg">Opens your default mail app addressed to halimazizi111@hotmail.com</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       PROJECT ARCHITECTURE DEEP-DIVE MODAL
+       =================================================================== -->
+  <div class="arch-modal-backdrop" id="archModalBackdrop" aria-hidden="true">
+    <div class="arch-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
+      <div class="arch-modal-header">
+        <div>
+          <span class="modal-eyebrow" id="modalProjectMeta">System Architecture Specification</span>
+          <h3 class="modal-title" id="modalProjectTitle">Project Title</h3>
+        </div>
+        <button type="button" class="arch-modal-close" id="archModalClose" aria-label="Close modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="arch-modal-body" id="modalProjectBody">
+        <!-- Populated dynamically via assets/js/main.js -->
       </div>
     </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="services section-padding">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>What I Do</h2>
-        <div class="line"></div>
-      </div>
-
-      <div class="row mt-5">
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bxl-angular"></i></div>
-            <h4>Angular Development</h4>
-            <p>Building robust, scalable, and high-performance Single Page Applications (SPAs) leveraging the full power
-              of the Angular framework over the past 3 years.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-1">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bxl-typescript"></i></div>
-            <h4>TypeScript Engineering</h4>
-            <p>Writing clean, strongly-typed, and maintainable enterprise-level code to minimize bugs and ensure
-              long-term stability of software systems.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-2">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bx-devices"></i></div>
-            <h4>Responsive Web Apps</h4>
-            <p>Crafting modern web applications that look stunning and function seamlessly across all devices, ensuring
-              an optimal user experience.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bx-code-block"></i></div>
-            <h4>Clean Architecture</h4>
-            <p>Applying software engineering best practices, design patterns, and SOLID principles to create modular and
-              maintainable codebases.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-1">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bx-slideshow"></i></div>
-            <h4>UI / UX Integration</h4>
-            <p>Translating modern, intuitive interface designs into pixel-perfect, highly-interactive front-end
-              components and visual experiences.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-2">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bx-transfer-alt"></i></div>
-            <h4>API Integration</h4>
-            <p>Connecting front-end applications with complex RESTful APIs and GraphQL endpoints to ensure secure and
-              efficient data manipulation.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bx-data"></i></div>
-            <h4>State Management</h4>
-            <p>Architecting robust data flow and application state using NgRx, RxJS, and Redux patterns for scalable
-              enterprise data handling.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-1">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bx-tachometer"></i></div>
-            <h4>Performance Optimization</h4>
-            <p>Auditing and optimizing web applications for maximum speed and efficiency using lazy loading, tree
-              shaking, and memory management.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-2">
-          <div class="service-card glass-card card-rotate">
-            <div class="service-icon"><i class="bx bx-git-branch"></i></div>
-            <h4>Version Control / CI-CD</h4>
-            <p>Managing extensive codebases with Git, conducting strict code reviews, and configuring automated CI/CD
-              pipelines for smooth deployments.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio section-padding">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Selected Work</h2>
-        <div class="line"></div>
-      </div>
-
-      <div class="row mt-5">
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 1">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>E-Commerce Platform</h4>
-                  <p>Angular, NgRx, Node.js</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-1">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 2">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>Admin Dashboard</h4>
-                  <p>Angular, TypeScript, SASS</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-2">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 3">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>Finance App UI</h4>
-                  <p>Ionic, Angular, TailwindCSS</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 4">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>Task Management System</h4>
-                  <p>Angular, Firebase, RxJS</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-1">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 5">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>Crypto Exchange Tracker</h4>
-                  <p>Angular, RxJS, Chart.js</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-2">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 6">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>AI Data Visualizer</h4>
-                  <p>TypeScript, D3.js</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 7">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>Blockchain Explorer</h4>
-                  <p>Angular, Web3.js, Ethers</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-1">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 8">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>Smart Home Protocol</h4>
-                  <p>TypeScript, Socket.io</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up delay-2">
-          <div class="portfolio-item glass-card card-rotate">
-            <div class="portfolio-img">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800"
-                class="img-fluid" alt="Project 9">
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h4>Cyber Security Monitor</h4>
-                  <p>Angular, RxJS, SignalR</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-4 fade-in-up">
-        <a href="https://github.com/halim-azizi" target="_blank" class="btn-custom btn-outline-gl">View More on GitHub
-          <i class="bi bi-github"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Timeline Section -->
-  <section id="experience" class="experience section-padding">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Experience & Education</h2>
-        <div class="line"></div>
-      </div>
-
-      <div class="timeline mt-5">
-        <!-- Timeline Item 1 -->
-        <div class="timeline-item fade-in-up">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card card-rotate">
-            <span class="timeline-date">2024 - Present</span>
-            <h3>Software Developer</h3>
-            <span class="timeline-company">Tech Solutions Inc.</span>
-            <p>Leading the development of complex enterprise applications, building reusable components, and optimizing
-              performance using Angular and TypeScript.</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item 2 -->
-        <div class="timeline-item fade-in-up delay-1">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card card-rotate">
-            <span class="timeline-date">2023 - 2024</span>
-            <h3>Junior Software Developer</h3>
-            <span class="timeline-company">Creative Digital Agency</span>
-            <p>Developed dynamic and responsive web applications. Collaborated closely with senior engineers to
-              implement robust features and clean code.</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item 3 -->
-        <div class="timeline-item fade-in-up delay-2">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card card-rotate">
-            <span class="timeline-date">2019 - 2023</span>
-            <h3>Bachelor of Computer Science</h3>
-            <span class="timeline-company">University</span>
-            <p>Graduated with honors, focusing on software engineering, data structures, algorithms, and web development
-              fundamentals.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact section-padding">
-    <div class="container">
-      <div class="section-title fade-in-up">
-        <h2>Get In Touch</h2>
-        <div class="line"></div>
-      </div>
-
-      <div class="row mt-5 justify-content-center">
-        <div class="col-lg-10">
-          <div class="contact-wrapper glass-card card-rotate fade-in-up">
-            <div class="row">
-              <div class="col-md-4 contact-item">
-                <div class="icon-circle"><i class="bx bx-map"></i></div>
-                <h4>Location</h4>
-                <p>Tetovo, North Macedonia</p>
-              </div>
-              <div class="col-md-4 contact-item">
-                <div class="icon-circle"><i class="bx bx-envelope"></i></div>
-                <h4>Email</h4>
-                <p><a href="mailto:halimazizi111@hotmail.com">halimazizi111@hotmail.com</a></p>
-              </div>
-              <div class="col-md-4 contact-item row-end">
-                <div class="icon-circle"><i class="bx bx-phone-call"></i></div>
-                <h4>Phone</h4>
-                <p><a href="tel:+38972652113">+389 72 652 113</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-5 justify-content-center fade-in-up delay-1">
-        <div class="col-lg-10 text-center">
-          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark"
-            data-type="VERTICAL" data-vanity="halim-azizi-262680206" data-version="v1">
-            <a class="badge-base__link LI-simple-link"
-              href="https://mk.linkedin.com/in/halim-azizi-262680206?trk=profile-badge"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong>Halim Azizi</strong>. All Rights Reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-monogram">HA</span>
+          <div>
+            <strong>Halim Azizi</strong> — Senior Front-End &amp; Full-Stack Software Engineer
+            <p class="mb-0">Angular &bull; TypeScript &bull; React/Next.js &bull; .NET &amp; AI Systems</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#hero">Top</a>
+          <a href="#about">Profile</a>
+          <a href="#expertise">Tech Stack</a>
+          <a href="#experience">Experience</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="cv.html">Printable CV</a>
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 Halim Azizi. All rights reserved.
+        </div>
+      </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
